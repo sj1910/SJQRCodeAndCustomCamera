@@ -1,0 +1,8 @@
+use_frameworks!
+platform :ios, '8.0'
+inhibit_all_warnings!
+
+target ‘SJQRCodeAndCustomCamera’ do
+	pod 'Masonry', '~> 1.0.1'
+	pod 'ReactiveObjC', ’~> 3.0.0’
+end

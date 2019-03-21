@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = kWhiteColor;
+    [self.window makeKeyAndVisible];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    navC.navigationBar.translucent = NO;
+    [[UINavigationBar appearance] setBarTintColor:kBaseBlueColor];
+    [[UINavigationBar appearance] setTintColor:kWhiteColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: Font(18)}];
+    self.window.rootViewController = navC;
     return YES;
 }
 
